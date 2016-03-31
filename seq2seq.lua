@@ -120,7 +120,10 @@ function Seq2Seq:eval(input)
     local prediction = self.decoder:forward(torch.Tensor{output})[1]
     -- prediction contains the probabilities for each word IDs.
     -- The index of the probability is the word ID.
-    local prob, wordIds = prediction:sort(1, true)
+--    print(prediction)
+    local predictionfloat = prediction:float()
+    local prob, wordIds = predictionfloat:sort(1, true)
+--    local prob, wordIds = prediction:sort(1, true)
 
     -- First one is the most likely.
     output = wordIds[1]
