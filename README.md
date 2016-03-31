@@ -119,6 +119,13 @@ th -i eval.lua
 th> say "Hello."
 ```
 
+use cltorch:
+```sh
+th -i eval.lua --opencl
+# ...
+th> say "Hello."
+```
+
 ## Credits
 
 Copyright Marc-Andre Cournoyer <macournoyer@gmail.com>.
